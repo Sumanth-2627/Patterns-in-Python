@@ -1,0 +1,85 @@
+#pattern sqaure
+n=int(input())
+for i in range(n):
+    for j in range(n):
+        print("*",end="")
+    print()
+--------------------------------------------------
+#pattern triangle
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        print("*",end="")
+    print()
+--------------------------------------------------
+#pattern lower triangle
+n=int(input())
+for i in range(n):
+    for j in range(i,n):
+        print("*",end="")
+    print()
+--------------------------------------------------
+#mixed triangle
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        print("*",end="")
+    print()
+for i in range(n):
+    for j in range(i+1,n):
+        print("*",end="")
+    print()
+--------------------------------------------------
+#outline pattern
+n=int(input())
+for i in range(n):
+    for j in range(n):
+        if i==n-1 or j==n-1 or i==0 or j==0:
+            print("* ",end="")
+        else:
+            print("  ",end="")
+    print("")
+    
+--------------------------------------------------
+#pattern pyramid
+n=int(input())
+c="* "
+for i in range(n):
+    print((c*(2*i+1)).center(4*n-2," "))
+--------------------------------------------------
+#pattern rhombus
+n=int(input())
+c="* "
+for i in range(n):
+    print((c*(2*i+1)).center(4*n-2," "))
+for i in range(n-2,-1,-1):
+    print((c*(2*i+1)).center(4*n-2," "))
+--------------------------------------------------
+#Hacker Rank Alphabet Rangoli
+def fun(x,n):
+    s=""
+    for i in range(n):
+        s=s+chr(x-i)
+    for i in range(n-2,-1,-1):
+        s=s+chr(x-i)
+    s="-".join(list(s))
+    return s
+a=int(input())
+k=ord('a')+a
+for i in range(a):
+    print(fun(k,i+1).center(4*(a-1)+1,"-"))
+for i in range(a-2,-1,-1):
+    print(fun(k,i+1).center(4*(a-1)+1,"-"))
+--------------------------------------------------
+#hacker rank doormat
+def doormat(n,m):
+    for i in range(n//2):
+        print(((".|.")*((2*i)+1)).center(m,"-"))
+        if i==(n//2)-1:
+            print(("WELCOME").center(m,"-"))
+    for i in range((n//2)-1,-1,-1):
+        print(((".|.")*((2*i)+1)).center(m,"-"))
+      
+(n,m)=map(int,input().split())
+doormat(n,m)
+--------------------------------------------------
